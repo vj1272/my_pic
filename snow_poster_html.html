@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SNOW CPRS Ticketing Poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #e8edf2;
+    display: flex; justify-content: center; align-items: flex-start;
+    min-height: 100vh; padding: 30px 20px;
+  }
+  .poster {
+    background: #0a2a4a;
+    color: #fff;
+    width: 900px;
+    padding: 32px 32px 28px;
+    border-radius: 14px;
+  }
+  .header {
+    background: #1565c0;
+    border-radius: 10px;
+    padding: 20px 28px 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-left: 6px solid #00bcd4;
+    border-right: 6px solid #00bcd4;
+  }
+  .header .hosp-icon { font-size: 28px; margin-bottom: 8px; }
+  .header h1 { font-size: 24px; font-weight: 600; color: #e3f2fd; margin-bottom: 5px; }
+  .header .sub { font-size: 14px; color: #90caf9; }
+  .badge {
+    display: inline-block;
+    background: #00bcd4; color: #003344;
+    font-size: 12px; font-weight: 600;
+    border-radius: 20px; padding: 4px 16px; margin-top: 10px;
+  }
+  .affected-box {
+    background: #0d2f5a;
+    border-left: 5px solid #ffb74d;
+    border-radius: 7px;
+    padding: 11px 16px;
+    font-size: 13.5px;
+    color: #ffe0b2;
+    margin-bottom: 18px;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .affected-box .icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .grid-main { display: grid; grid-template-columns: 1fr 260px; gap: 16px; margin-bottom: 16px; }
+  .card {
+    background: #0d3b6e;
+    border-radius: 10px;
+    padding: 16px 18px;
+    border: 0.5px solid #1e5fa8;
+  }
+  .card-accent { border-top: 4px solid #00bcd4; }
+  .card-green  { border-top: 4px solid #4caf50; }
+  .card-red    { border-top: 4px solid #ef5350; }
+  .card h2 {
+    font-size: 12px; font-weight: 600; color: #90caf9;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 12px; display: flex; align-items: center; gap: 7px;
+  }
+  .step { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .step-num {
+    min-width: 26px; height: 26px;
+    background: #00bcd4; color: #003344;
+    border-radius: 50%; font-size: 13px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .step-text { font-size: 13.5px; color: #cce4ff; line-height: 1.55; padding-top: 3px; }
+  .step-text strong { color: #fff; font-weight: 600; }
+  .type-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 4px 0 14px 38px; }
+  .type-box { background: #0a2a4a; border-radius: 7px; padding: 10px 13px; border: 0.5px solid #1e5fa8; }
+  .type-label { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 5px; }
+  .incident-label { color: #ffb74d; }
+  .change-label { color: #4dd0e1; }
+  .type-desc { font-size: 12.5px; color: #90caf9; line-height: 1.45; }
+  .type-desc strong { color: #fff; }
+  .link-btn {
+    display: block;
+    background: #0a2a4a;
+    border: 0.5px solid #1e88e5;
+    border-radius: 7px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #4dd0e1;
+    text-decoration: none;
+    margin-bottom: 8px;
+  }
+  .link-btn .lbl { font-size: 11px; color: #546e7a; display: block; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .checklist { list-style: none; }
+  .checklist li {
+    font-size: 13px; color: #cce4ff; line-height: 1.5;
+    padding: 7px 0; border-bottom: 0.5px solid #1e3a5f;
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check { color: #4caf50; font-size: 15px; flex-shrink: 0; }
+  .donts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+  .dont-item {
+    font-size: 13px; color: #ffcdd2; padding: 5px 0;
+    display: flex; gap: 9px; align-items: flex-start;
+    border-bottom: 0.5px solid #3b1010;
+  }
+  .xmark { color: #ef5350; font-size: 15px; flex-shrink: 0; }
+  .footer {
+    text-align: center; margin-top: 18px;
+    font-size: 11.5px; color: #546e7a;
+    border-top: 0.5px solid #1e3a5f; padding-top: 12px;
+  }
+  @media print {
+    body { background: none; padding: 0; }
+    .poster { width: 100%; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="header">
+    <div class="hosp-icon">🏥</div>
+    <h1>ServiceNow (SNOW) Ticketing System for CPRS Issues</h1>
+    <div class="sub">YourIT Portal has replaced the CAC LEAF System</div>
+    <span class="badge">Affects all CPRS end users</span>
+  </div>
+
+  <div class="affected-box">
+    <span class="icon">⚠️</span>
+    <span><strong style="color:#fff;">Important:</strong> All CPRS issues, requests, and updates must be submitted through the YourIT portal. Do not submit via email or instant message.</span>
+  </div>
+
+  <div class="grid-main">
+
+    <div class="card card-accent">
+      <h2>📋 How to submit a ticket</h2>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Locate the <a href="https://yourit.va.gov/va" style="color:#4dd0e1;font-weight:600;">YourIT icon</a> on your desktop and open the portal.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Determine your ticket type:</div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-box">
+          <div class="type-label incident-label">⚡ Incident</div>
+          <div class="type-desc">Something is broken or producing errors — select <a href="https://yourit.va.gov/va?id=yourit_report_incident" style="color:#4dd0e1;font-weight:600;">Report an Issue</a></div>
+        </div>
+        <div class="type-box">
+          <div class="type-label change-label">🔄 Change Request</div>
+          <div class="type-desc">New, removing, or updating documents — select <a href="https://yourit.va.gov/va?id=yourit_sc_categories" style="color:#4dd0e1;font-weight:600;">Submit a Request</a></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Complete the <a href="https://yourit.va.gov/va?id=yourit_report_incident" style="color:#4dd0e1;font-weight:600;">Report an Issue</a> or <a href="https://yourit.va.gov/va?id=sc_cat_item&sys_id=45dd608687efa150765d77f5cebb35ef&cat_id=52031dc01bf5e810a25d0d08ec4bcbdd&catalog_id=b6f0db901b462010a25d0d08ec4bcb47" style="color:#4dd0e1;font-weight:600;">VISTA/CPRS Request Form</a>, then click <strong>Order Now</strong>.</div>
+      </div>
+
+      <div style="margin-top:14px;">
+        <a class="link-btn" href="https://raw.githubusercontent.com/vj1272/my_pic/refs/heads/main/Submitting CAC Request through YourIT.docx">
+          <span class="lbl">Quick link</span>
+          📄 To enter a YourIT request to Durham CAC.pdf
+        </a>
+        <a class="link-btn" href="https://raw.githubusercontent.com/vj1272/my_pic/refs/heads/main/Snow Attachment.docx">
+          <span class="lbl">Quick link</span>
+          📎 Attaching a document to a YourIT ticket
+        </a>
+      </div>
+    </div>
+
+    <div class="card card-green">
+      <h2>✅ Do's</h2>
+      <ul class="checklist">
+        <li><span class="check">✓</span> Encrypt PHI via secure attachment</li>
+        <li><span class="check">✓</span> Obtain all parties/committee approvals before submitting system update requests</li>
+        <li><span class="check">✓</span> Include detailed description or information in every request</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="card card-red">
+    <h2>🚫 Don'ts — never do the following</h2>
+    <div class="donts-grid" style="margin-top:4px;">
+      <div class="dont-item"><span class="xmark">✗</span> Enter PHI directly in the request form</div>
+      <div class="dont-item"><span class="xmark">✗</span> Email requests to the team</div>
+      <div class="dont-item"><span class="xmark">✗</span> Submit requests via Instant Message</div>
+      <div class="dont-item"><span class="xmark">✗</span> Enter system updates without proper approval</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    IT Informatics &nbsp;·&nbsp; CPRS Support &nbsp;·&nbsp; Durham VA Medical Center &nbsp;|&nbsp; Use YourIT for all submissions
+  </div>
+
+</div>
+</body>
+</html>
